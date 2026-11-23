@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STYLE WEAR | Futuristic 3D Fashion Platform</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js Library for 3D Graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Announcement & Sri Lankan Hotline Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span><i class="fa-solid fa-truck-fast"></i> Islandwide Delivery Across Sri Lanka | PayHere &amp; FriMi Accepted</span>
+            <span><i class="fa-solid fa-phone"></i> Order Hotline: +94 11 789 2200</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-3d">STYLE WEAR</span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#showroom" class="nav-link">Shop</a>
+                <a href="#mens-section" class="nav-link">Men</a>
+                <a href="#womens-section" class="nav-link">Women</a>
+                <a href="#tryon-section" class="nav-link">Virtual Try-On</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="accountBtn" title="User Account">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+                <button class="icon-btn bag-btn" id="bagBtn" title="Shopping Bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="bag-count-badge" id="cartCount">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Cinematic 3D Introduction -->
+    <section class="hero-section" id="hero">
+        <div id="canvas-container"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="logo-badge-3d">STYLE WEAR LUXURY 3D</div>
+            <h1 class="hero-title">BEYOND FASHION.<br><span class="highlight">BEYOND LIMITS.</span></h1>
+            <p class="hero-subtitle">Discover your true identity through our futuristic 3D fashion showroom and personalized virtual fitting experience.</p>
+            
+            <div class="hero-cta-group">
+                <a href="#showroom" class="btn btn-primary" id="enterFashionWorld">
+                    <span>ENTER THE FASHION WORLD</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#tryon-section" class="btn btn-outline">
+                    <span>DISCOVER YOUR STYLE</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>SCROLL TO EXPLORE</span>
+            <div class="mouse-icon"><div class="wheel"></div></div>
+        </div>
+    </section>
+
+    <!-- About Us & Brand Story Section -->
+    <section class="about-section" id="about">
+        <div class="container grid-2">
+            <div class="about-text-content">
+                <span class="section-tag">BRAND STORY</span>
+                <h2>Redefining Sri Lankan Fashion Retail</h2>
+                <p class="lead-text">STYLE WEAR is a premier modern fashion destination dedicated to bringing style, confidence, and individuality together for fashion enthusiasts in Sri Lanka and worldwide.</p>
+                <p>We empower local artisans, fashion designers, and small-scale apparel manufacturers by transforming traditional shopping into an interactive, high-tech digital runway platform.</p>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Sri Lankan Crafted</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">360°</span>
+                        <span class="stat-label">Virtual Inspection</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Zero</span>
+                        <span class="stat-label">Sizing Confusion</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-visual-card">
+                <div class="visual-inner">
+                    <i class="fa-solid fa-cube logo-3d-icon"></i>
+                    <h3>Interactive 3D Fitting</h3>
+                    <p>Experience real-time fabric physics, true-to-life color swatches, and precision 3D runway previews before making a purchase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Fashion Showroom & Collections Section -->
+    <section class="showroom-section" id="showroom">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">IMMERSIVE FASHION WORLD</span>
+                <h2>Explore Collection Showcase</h2>
+                <p>Discover luxury apparel designed with precision tailoring and high-grade fabrics.</p>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All Items</button>
+                <button class="tab-btn" data-filter="men">Men's Collection</button>
+                <button class="tab-btn" data-filter="women">Women's Collection</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products dynamically rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Try-On & 360 Feature Section -->
+    <section class="tryon-section" id="tryon-section">
+        <div class="container grid-2 align-center">
+            <div class="tryon-visual">
+                <div class="stage-3d-wrapper">
+                    <canvas id="tryonCanvas"></canvas>
+                    <div class="tryon-badge"><i class="fa-solid fa-rotate"></i> Drag to Rotate 360°</div>
+                </div>
+            </div>
+
+            <div class="tryon-info">
+                <span class="section-tag">VIRTUAL FASHION MIRROR</span>
+                <h2>Experience 360° Fitting Studio</h2>
+                <p>Eliminate sizing guesswork and color uncertainty with our interactive 3D human runway preview tool.</p>
+                
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>Live Fabric Texture Rendering:</strong> Inspect weave quality, linen weights, and fabric movement under studio lighting.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>Precision Sizing Metrics (XS - XXL):</strong> Grounded in apparel UX standards to reduce online returns.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> <strong>Interactive Color Swatches:</strong> Switch instantly between Obsidian Black, Titanium White, Natural Beige, and Emerald Green.</li>
+                </ul>
+
+                <button class="btn btn-primary" onclick="open360Modal(1)">
+                    <i class="fa-solid fa-vr-cardboard"></i> LAUNCH 360° MODEL STUDIO
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Store Info Section -->
+    <section class="contact-section" id="contact">
+        <div class="container grid-2">
+            <div>
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2>Contact STYLE WEAR</h2>
+                <p>Have questions about custom sizing, order delivery across Sri Lanka, or fabric remnant customization?</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Headquarters &amp; Showroom:</strong>
+                            <p>No. 45 Galleria Avenue, Colombo 03, Sri Lanka</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Hotline / WhatsApp:</strong>
+                            <p>+94 11 789 2200 / +94 77 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Customer Support:</strong>
+                            <p>support@stylewear.lk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to STYLE WEAR Sri Lanka team.');">
+                <h3>Send Us a Message</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Full Name" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email Address" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Telephone Number" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Your Inquiry or Custom Sizing Request..." required class="form-input"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-3d">STYLE WEAR</span>
+                <p>Empowering Sri Lankan Fashion Retail through futuristic 3D digital experiences.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#hero">Home</a>
+                <a href="#showroom">Shop Collection</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact Support</a>
+            </div>
+            <div class="footer-payments">
+                <h4>Accepted Payments</h4>
+                <div class="payment-badges">
+                    <span>PayHere</span>
+                    <span>FriMi</span>
+                    <span>Visa / MasterCard</span>
+                    <span>Cash on Delivery</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 STYLE WEAR Fashion Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SLIDING SHOPPING BAG DRAWER -->
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Your Shopping Bag</h3>
+            <button class="close-drawer-btn" id="closeCartBtn">&times;</button>
+        </div>
+
+        <div class="cart-body" id="cartBody">
+            <!-- Cart items inserted dynamically -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span class="total-amount" id="cartSubtotal">LKR 0.00</span>
+            </div>
+
+            <!-- Customer Details Checkout Form -->
+            <form class="checkout-form" id="checkoutForm">
+                <h4>Delivery &amp; Customer Details</h4>
+                <div class="form-group">
+                    <input type="text" id="custName" placeholder="Full Name" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="custAddress" placeholder="Delivery Address (Sri Lanka)" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="custPhone" placeholder="Telephone Number (+94)" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <select id="custPayment" class="form-input" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="payhere">PayHere Online Gateway</option>
+                        <option value="frimi">FriMi Digital Wallet</option>
+                        <option value="card">Credit / Debit Card</option>
+                        <option value="cod">Cash on Delivery (Islandwide)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary full-width" id="confirmOrderBtn">
+                    CONFIRM &amp; PLACE ORDER
+                </button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- 360-DEGREE PRODUCT PREVIEW MODAL -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <div class="modal-grid" id="modalContent">
+                <!-- Dynamic product view content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Alert -->
+    <div class="toast-notification" id="toastNotification">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">YOUR ITEM HAS BEEN ADDED TO YOUR BAG!</span>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="main.js"></script>
+</body>
+</html>
